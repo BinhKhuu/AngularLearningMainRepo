@@ -1,0 +1,6 @@
+<div>
+    <div [innerHtml]="safeTemplate"></div>
+    <input [(ngModel)]="userInput" placeholder="Enter HTML" />
+    <button (click)="updateTemplate()">Update Template</button>
+    <p>this is santisted through angular {{userInput}}</p>
+  </div>

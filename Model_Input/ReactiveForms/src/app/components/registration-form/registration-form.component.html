@@ -1,0 +1,11 @@
+<form [formGroup]="registrationForm">
+    <label #userNameLabel >Test</label>
+    <app-username-input #userNameInput [(username)]="registrationForm.controls['username'].value">
+        <div #projectedElement projected-content> Projected Content</div>
+    </app-username-input>
+    <app-password-input #passwordInput [(password)]="registrationForm.controls['password'].value" ></app-password-input>
+    <app-email-input #emailInput [(email)]="registrationForm.controls['email'].value" ></app-email-input>
+    <button (click)="onSubmit()">submit</button>
+    <button (click)="layoutThrash()"> layoutThrash</button>
+    <button (click)="readWriteLayout()">not layout thrash</button>
+</form>

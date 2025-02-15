@@ -1,0 +1,46 @@
+<div>
+  <h1> Parent </h1>
+  <p>primitive required : {{required_primitive}}</p>
+  <p>primitive alias : {{alias_primitive}}</p>
+  <p>primitive transofrm: {{transform_primitive}}</p>
+  <p>input signal required: {{require_signal()}}</p>
+  <p><button (click)="updateParentInput()">update parent input</button></p>
+</div>
+<hr />
+<br />
+<div>
+  <app-signal-input-1 
+  [classicInput1]="required_primitive"
+  [classicInput2]="transform_primitive"
+  [inputSignal_Required]="required_primitive"
+  [aliasedInputSignal]="alias_primitive"
+  [inputSignal_Transform]="transform_primitive"
+  >
+
+</app-signal-input-1>
+</div>
+<hr />
+<br />
+<div>
+  <app-output-signal-1
+    (countUpdated)="countUpdatedParentEvent($event)"
+    (outputObservable)="outputObservableParentEvent($event)"
+    (outputToObservable2)="outputObservable2ParentEvent($event)"
+    (memoryLeakToObservable)="memoryLeakObservableParentEvent($event)"
+    
+  >
+  
+  </app-output-signal-1>
+</div>
+<hr />
+<br />
+<div>
+  <app-model-signal-1
+    [(modelInput_required)]="required_primitive"
+    [(modelInputAliased)]="alias_primitive"
+    [modelInput_Transform]="transform_primitive"
+    (modelInput_TransformChange)="inputSignal_Transformed($event)"
+    [(modelInput_Sginal_Required)]="require_signal"
+  >
+  </app-model-signal-1>
+</div>
