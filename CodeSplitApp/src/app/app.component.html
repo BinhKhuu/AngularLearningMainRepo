@@ -1,0 +1,22 @@
+<div *ngIf="showMainPage">
+  <div >test</div>
+  <p>This is the Portal page</p>
+  <button appHoverEffect [hoverColor]="'red'" [value]="parentProperty" [myAliasValue]="1" [(modelValue)]="volume"  (modelValueChange)="modelValueOnChange($event)" (click)="logIn()">login</button>
+  <button appHoverEffect [value]="'blue'"  [myAliasValue]="1" (click)="logout()">logout</button>
+  <button appHoverEffect  [value]="'blue'" [myAliasValue]="1" (click)="naviageTo('home')">home</button>
+  <button (click)="naviageTo('about')">about</button>
+  <button (click)="changeParentProperty()"> change parent Proepty</button>
+  <div>{{volume()}}</div>
+
+  <app-derived [sharedProperty]="prop2"></app-derived>
+
+  <br>
+  <app-custom-card>
+    <p>This is the projected Content</p>
+    <p class="card-title">Hello</p>
+    <p class="card-body"> world</p>
+  </app-custom-card>
+</div>
+
+<router-outlet></router-outlet>
+

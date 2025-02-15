@@ -1,0 +1,43 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Dependency directories
+jspm_packages/
+
+# Compiled output
+dist/
+build/
+out-tsc/
+
+# Production
+src/environments/environment.prod.ts
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE and Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Angular specific files
+.angular/
+.angular-cache/
+.angular-cli.json
+.angular.json
+
+# TypeScript specific files
+*.tsbuildinfo
+
+# Temporary files
+tmp/
+temp/
+
+# Others
+coverage/
