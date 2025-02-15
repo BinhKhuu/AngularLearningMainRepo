@@ -1,10 +1,11 @@
 import { Component, SecurityContext } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
+import { UrlComponent } from "./url/url.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, UrlComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
