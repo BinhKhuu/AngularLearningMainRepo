@@ -3,6 +3,7 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 
+// for now the typings for trusted types are not working for this example
 declare global {
   interface TrustedTypePolicy {
     createHTML(value: string): TrustedHTML;
