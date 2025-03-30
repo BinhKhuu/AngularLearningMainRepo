@@ -41,3 +41,4 @@ temp/
 
 # Others
 coverage/
+routing/angular-routing-app/.env
