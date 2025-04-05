@@ -19,11 +19,11 @@ export class LoginComponent {
   ){
     this.msalBroadcastService.msalSubject$
     .pipe(
-      tap(((msg: EventMessage) => console.log(msg))),
-      filter((msg: EventMessage) => msg.eventType === 
-        EventType.LOGIN_SUCCESS || 
+      filter((msg: EventMessage) => 
+        msg.eventType === EventType.LOGIN_SUCCESS || 
         msg.eventType === EventType.ACQUIRE_TOKEN_SUCCESS || 
-        msg.eventType === EventType.INITIALIZE_END)    
+        msg.eventType === EventType.INITIALIZE_END 
+      )    
     )
     .subscribe((result: EventMessage) => {
       if(result.eventType == EventType.INITIALIZE_END){
