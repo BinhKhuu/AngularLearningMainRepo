@@ -4,6 +4,7 @@ import { MsalBroadcastService, MsalService } from '@azure/msal-angular';
 import { AuthenticationResult, EventMessage, EventType } from '@azure/msal-browser';
 import { filter, tap } from 'rxjs';
 import { msalInstance } from '../../msal/msalConfiguration';
+import { getEnvMSALScopes } from '../helpers/envHelper';
 
 @Component({
   selector: 'app-login',
@@ -47,10 +48,7 @@ export class LoginComponent {
   }
 
   public aquireTokenSilent(account: any){
-    const scopes = [
-      import.meta.env['NG_APP_Scope1'],
-      import.meta.env['NG_APP_Scope2']
-    ]
+    const scopes =  getEnvMSALScopes();
     this.msalService.acquireTokenSilent({
       scopes,
       account

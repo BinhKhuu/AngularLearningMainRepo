@@ -3,6 +3,7 @@ import { Inject } from '@angular/core';
 import { MsalService } from '@azure/msal-angular';
 import { AuthenticationResult } from '@azure/msal-browser';
 import { catchError, from, Observable, switchMap, throwError } from 'rxjs';
+import { getEnvMSALScopes } from './helpers/envHelper';
 
 export const bearertokenInterceptor: HttpInterceptorFn = (req, next) => {
   return from(aquireTokenSilent())
@@ -27,10 +28,7 @@ const aquireTokenSilent = (): Promise<AuthenticationResult> => {
   const msalService = Inject(MsalService);
   const accounts = msalService.instance.getAllAccounts();
   if(accounts && accounts.length > 0){
-    const scopes = [
-      import.meta.env['NG_APP_Scope1'],
-      import.meta.env['NG_APP_Scope2']
-    ];
+    const scopes = getEnvMSALScopes();
     // assuming first account
     const account = accounts[0];
     return msalService.acquireTokenSilent({

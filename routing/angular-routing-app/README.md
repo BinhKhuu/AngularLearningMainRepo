@@ -1,8 +1,24 @@
 # AngularRoutingApp
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.2.
+This project is used to document, and learn about angular routing
+This project uses Microsoft Identity servers for authentication and requires app registraion setup.
 
 ## Development server
+### Env variables
+
+ngx env build is used to store local secrets
+```
+@ngx-env/builder
+```
+You need the following settings to get started
+```
+NG_APP_ClientId=<clientID of the app registraion>
+NG_APP_Authority=https://login.microsoftonline.com/<tenantId>
+NG_APP_RedirectUri=<redirect url set in the app registraion>
+NG_APP_PostLogoutRedirectUri=<your local host>
+NG_APP_Scope1=<yourscopes seperated by a comma>
+```
 
 To start a local development server, run:
 
